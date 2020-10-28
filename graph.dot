@@ -1,0 +1,5 @@
+digraph Test {
+c -> a [label= 10] 
+a -> b [label= 20] 
+b -> c [label= 30] 
+}
