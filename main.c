@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-
 int main(void){
      int ver=0;// количество вершин
      int uzl=0;// количество узлов
@@ -34,9 +32,7 @@ int main(void){
                 fscanf(MatrFile,"%d",&Arr[i][j++]);
         }
         fclose(MatrFile);
-
-// проверяем является ли граф ориентрованным или взвешенным
-        
+// проверяем является ли граф ориентрованным или взвешенным       
         for (int i = 0; i < ver; i++){
 		    for (int j = 0; j < uzl; j++){
 			    printf("%d ",Arr[i][j]);
@@ -81,9 +77,7 @@ int main(void){
             }
             printf("\n");
 	    }  
-
-        // создание графа на языке dot и компиляция файла
-
+   // создание графа на языке dot и компиляция файла
         FILE *GraphFile=fopen("graph.dot", "w");
         if(GraphFile==NULL){
             printf("ne poluchaetsya sozdat fail");
@@ -106,9 +100,7 @@ int main(void){
             system("dot -Tpng graph.dot -o graph.png");
             system("xdg-open graph.png");
         }
-        
         //проверка связности графа по теореме
-
         if(uzl>(((ver-1)*(ver-2))/2)){
             printf("svyazniy graph\n");
         }else{
